@@ -1,0 +1,16 @@
+{
+  "name": "data-entry-system-hono",
+  "scripts": {
+    "backend-dev": "wrangler dev",
+    "backend-deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.2",
+    "@libsql/client": "^0.15.7",
+    "hono": "^4.7.10"
+  },
+  "devDependencies": {
+    "wrangler": "^4.16.1"
+  }
+}

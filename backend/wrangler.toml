@@ -1,0 +1,7 @@
+name = "data-entry-system-hono"
+main = "src/index.ts"
+compatibility_date = "2024-05-23"
+
+[vars]
+TURSO_DB_URL = "libsql://dataentrydb-paglu.aws-ap-south-1.turso.io"
+TURSO_DB_TOKEN = "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDc2Nzk5OTAsImlkIjoiYWUzOGNlMGUtN2MwZS00MjM3LTg3NjAtMWU3YjZjY2YxZWE5IiwicmlkIjoiNzA5MTg0YjYtOTA2MS00ZTgzLWFkODUtZTUzY2Y5ZGYxMDMxIn0.ROE7TSUGievVNIPmwANJ1QL8pudhCAnpOpWEQfywCseNfdpWXnCXK0eskPmR7vWNgcDFZjJh3-JuaaSwIbNpDQ"
