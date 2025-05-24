@@ -76,3 +76,5 @@ async function loadEntries() {
 }
 
 document.addEventListener('DOMContentLoaded', loadEntries);
+
+console.log('hello');
