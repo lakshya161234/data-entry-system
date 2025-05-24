@@ -43,4 +43,21 @@ app.get('/entries', async (c: Context) => {
 
 app.get('/api', (c) => c.text('API Running'))
 
+app.put('/entries/:id', async (c: Context) => {
+  const id = c.req.param('id');
+  const body = await c.req.json();
+  const { name, age, gender, charges, payment } = body;
+
+  try {
+    const db = getDB(c.env);
+    await db.execute({
+      sql: `UPDATE entries SET name = ?, age = ?, gender = ?, charges = ?, payment = ? WHERE id = ?`,
+      args: [name, age, gender, charges, payment, id]
+    });
+    return c.json({ success: true });
+  } catch (err: any) {
+    return c.json({ error: err.message }, 500);
+  }
+});
+
 export default app
