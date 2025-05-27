@@ -21,7 +21,7 @@ document.getElementById('entryForm').addEventListener('submit', async function (
     if (response.ok) {
       document.getElementById('entryForm').reset();
       const formContainer = document.getElementById("form-container");
-      formContainer.style.display = formContainer.style.display === "block" ? "none" : "block";
+      hideForm();
       loadEntries();
     } else {
       alert('Error: ' + result.error);
@@ -35,14 +35,17 @@ document.getElementById('entryForm').addEventListener('submit', async function (
 
 document.getElementById("form-btn").onclick = function () {
   const formContainer = document.getElementById("form-container");
-  formContainer.style.display = formContainer.style.display === "none" ? "block" : "none";
+      formContainer.style.display = "block";
+      requestAnimationFrame(() => {
+      formContainer.classList.add("show");
+      });
 };
 
 
 window.onclick = function (event) {
   const modal = document.getElementById("form-container");
   if (event.target === modal) {
-    modal.style.display = "none";
+    hideForm();
   }
 };
 
@@ -77,4 +80,10 @@ async function loadEntries() {
 
 document.addEventListener('DOMContentLoaded', loadEntries);
 
-console.log('hello');
+function hideForm() {
+  const formContainer = document.getElementById("form-container");
+  formContainer.classList.remove("show");
+  setTimeout(() => {
+    formContainer.style.display = "none";
+  }, 300); // Match transition time
+}
