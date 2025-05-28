@@ -1,5 +1,5 @@
 async function loadEntries() {
-  const response = await fetch('http://data-entry-system.lakshyaupreti16.workers.dev/entries');
+  const response = await fetch('https://data-entry-system.lakshyaupreti16.workers.dev/entries');
   const data = await response.json();
 
   const tableBody = document.querySelector('#dataTable tbody');
@@ -57,7 +57,7 @@ document.getElementById('entryForm').addEventListener('submit', async (e) => {
     payment: document.getElementById('payment').value.trim()
   };
 
-  const url = id ? `http://data-entry-system.lakshyaupreti16.workers.dev/entries/${id}` : 'http://data-entry-system.lakshyaupreti16.workers.dev/entries';
+  const url = id ? `https://data-entry-system.lakshyaupreti16.workers.dev/entries/${id}` : 'https://data-entry-system.lakshyaupreti16.workers.dev/entries';
   const method = id ? 'PUT' : 'POST';
 
   await fetch(url, {
