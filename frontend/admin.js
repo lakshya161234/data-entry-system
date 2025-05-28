@@ -1,5 +1,5 @@
 async function loadEntries() {
-  const response = await fetch('http://localhost:8787/entries');
+  const response = await fetch('data-entry-system.lakshyaupreti16.workers.dev/entries');
   const data = await response.json();
 
   const tableBody = document.querySelector('#dataTable tbody');
@@ -32,7 +32,7 @@ async function loadEntries() {
   
       
       const formContainer = document.getElementById("form-container");
-      formContainer.style.display = "block"; // First set display to block
+      formContainer.style.display = "block"; 
       requestAnimationFrame(() => {
       formContainer.classList.add("show");
       });
@@ -57,7 +57,7 @@ document.getElementById('entryForm').addEventListener('submit', async (e) => {
     payment: document.getElementById('payment').value.trim()
   };
 
-  const url = id ? `http://localhost:8787/entries/${id}` : 'http://localhost:8787/entries';
+  const url = id ? `data-entry-system.lakshyaupreti16.workers.dev/entries/${id}` : 'data-entry-system.lakshyaupreti16.workers.dev/entries';
   const method = id ? 'PUT' : 'POST';
 
   await fetch(url, {
@@ -84,5 +84,5 @@ function hideForm() {
   formContainer.classList.remove("show");
   setTimeout(() => {
     formContainer.style.display = "none";
-  }, 300); // Match transition time
+  }, 300); 
 }

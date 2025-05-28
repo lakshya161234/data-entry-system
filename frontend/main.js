@@ -10,7 +10,7 @@ document.getElementById('entryForm').addEventListener('submit', async function (
   const entry = { name, age, gender, charges, payment };
 
   try {
-    const response = await fetch('http://localhost:8787/entries', {
+    const response = await fetch('data-entry-system.lakshyaupreti16.workers.dev/entries', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(entry)
@@ -51,7 +51,7 @@ window.onclick = function (event) {
 
 async function loadEntries() {
   try {
-    const response = await fetch('http://localhost:8787/entries');
+    const response = await fetch('data-entry-system.lakshyaupreti16.workers.dev/entries');
     const data = await response.json();
 
     const tableBody = document.querySelector('#dataTable tbody');
