@@ -1,4 +1,4 @@
-name = "data-entry-system-hono"
+name = "data-entry-system"
 main = "src/index.ts"
 compatibility_date = "2024-05-23"
 
